@@ -46,7 +46,7 @@ body {
 }
 
 .nav-list li:hover {
-    color: #FF7733;
+    color:#f75402;
 }
 
 .name-conteiner {
@@ -257,10 +257,12 @@ footer {
         max-width: 40px;
     }
     #btn:focus~.nav-list,.nav-list:hover {
-        display: block;
-        width: 20ch;
+        display: flex;
+        width: 480px;
         padding: 10px;
         align-self: flex-end;
+        justify-content: center;
+        flex-direction: column;
     }
 
     .nav-list {
@@ -268,11 +270,12 @@ footer {
         padding: 3px;
         display: none;
         position: relative;
-        background-color: black;
-        color:#A5CBC3 ;
+        background-color:rgba(133, 203, 51,0.8);
+        color:black ;
         border: 1px black;
         box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
         width: auto;
+        font-size: large;
     }
 
     .nav-list li {
