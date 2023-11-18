@@ -10,6 +10,12 @@ const hombres = document.getElementById("hombres");
 const sinGenero = document.getElementById("sinGenero");
 const noSeSabe = document.getElementById("noSeSabe");
 
+const todosSubmenu = document.getElementById("todos-submenu");
+const mujeresSubmenu = document.getElementById("mujeres-submenu");
+const hombresSubmenu = document.getElementById("hombres-submenu");
+const sinGeneroSubmenu = document.getElementById("sinGenero-submenu");
+const noSeSabeSubmenu = document.getElementById("noSeSabe-submenu");
+
 //Paginado
 
 const paginaActual = document.getElementById("pagina-actual");
@@ -146,7 +152,7 @@ hombres.addEventListener("click", () => {
 });
 //Primero: Elemento html
 //.addEventListener("evento", ()=>{})
-sinGenero.addEventListener("click", () => {
+sinGenero.addEventListener ("click", () => {
   const arr = data.results;
   const arrSinGenero = [];
 
@@ -177,3 +183,63 @@ todos.addEventListener("click", () => {
 });
 
 pagination(getData());
+
+mujeresSubmenu.addEventListener("click", () => {
+  const arr = data.results;
+  const arrMujeres = [];
+
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i].gender === "Female") {
+      arrMujeres.push(arr[i]);
+    }
+  }
+
+  printData(arrMujeres);
+});
+
+hombresSubmenu.addEventListener("click", () => {
+  const arr = data.results;
+  const arrHombres = [];
+
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i].gender === "Male") {
+      arrHombres.push(arr[i]);
+    }
+  }
+  printData(arrHombres);
+});
+//Primero: Elemento html
+//.addEventListener("evento", ()=>{})
+sinGeneroSubmenu.addEventListener ("click", () => {
+  const arr = data.results;
+  const arrSinGenero = [];
+
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i].gender === "Genderless") {
+      arrSinGenero.push(arr[i]);
+    }
+  }
+  printData(arrSinGenero);
+  console.log(arr);
+});
+
+noSeSabeSubmenu.addEventListener("click", () => {
+  const arr = data.results;
+  const arrNoSeSabe = [];
+
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i].gender === "unknown") {
+      arrNoSeSabe.push(arr[i]);
+    }
+  }
+  printData(arrNoSeSabe);
+});
+
+todosSubmenu.addEventListener("click", () => {
+  const arr = data.results;
+  printData(arr);
+});
+
+pagination(getData());
+
+
