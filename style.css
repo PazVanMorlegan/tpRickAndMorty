@@ -265,7 +265,7 @@ footer {
         position: relative;
         max-width: 40px;
     }
-    #btn:focus~.nav-list,.nav-list:hover {
+    #btn:focus~.nav-list,.nav-list:active {
         display: flex;
         width: 480px;
         padding: 10px;
